@@ -1,4 +1,5 @@
 import { FaTruckMoving } from "react-icons/fa";
+import Navbar from "./Navbar";
 
 const TopNav = () => {
   return (
@@ -13,6 +14,7 @@ const TopNav = () => {
           </div>
         </div>
       </div>
+      <Navbar/>
     </>
   );
 };
