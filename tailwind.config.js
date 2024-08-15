@@ -19,6 +19,10 @@ module.exports = {
       lg:'960px',
       xl:'1200px'
     },
+    fontFamily:{
+      primary:'var(--font-jetbrainMono)'
+
+    },
     extend: {
       keyframes: {
         "accordion-down": {
