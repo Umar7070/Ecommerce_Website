@@ -1,3 +1,4 @@
+import ShopingMenu from "@/components/ShopingMenu";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -7,16 +8,16 @@ const products = [
     title: "23 product",
   },
   {
-    img: "/img/Mobile Phone.png",
-    title: "23 product",
+    img: "/img/smart watch.png",
+    title: "52 product",
   },
   {
-    img: "/img/Mobile Phone.png",
-    title: "23 product",
+    img: "/img/headphone.png",
+    title: "18 product",
   },
   {
-    img: "/img/Mobile Phone.png",
-    title: "23 product",
+    img: "/img/cpu.png",
+    title: "63 product",
   },
 ];
 
@@ -49,16 +50,20 @@ const page = () => {
           {products.map((curEle, index) => {
             return (
               <>
-                <div className="bg-cyan-400 rounded-full flex flex-col h-[200px] w-[200px]  justify-center items-center">
-                  <div className=" flex justify-center items-center rounded-full flex-col">
-                    <img src={curEle.img} alt="" />
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <div className="bg-blue-200 rounded-full flex  h-[200px] w-[200px] justify-center items-center">
+                  <div className="hover:scale-110 transition-transform duration-300">
+                      <img src={curEle.img} alt="" />
+                    </div>
                   </div>
+                  <p className="text-gray-300">{curEle.title}</p>
                 </div>
               </>
             );
           })}
         </div>
       </div>
+      <ShopingMenu />
     </>
   );
 };
