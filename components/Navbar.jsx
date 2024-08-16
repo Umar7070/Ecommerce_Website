@@ -25,7 +25,7 @@ const Navbar = () => {
     console.log(pathname)
   return (
     <>
-    <div className="container flex gap-6 mt-6">
+    <div className="container flex gap-6 mt-6 shadow-lg">
         {
             links.map((curEle,index)=>{
                 return(
