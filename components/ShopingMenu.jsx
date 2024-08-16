@@ -30,7 +30,7 @@ const ShopingMenu = () => {
   return (
     <>
       <div className="container w-full mt-[50px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center  gap-3   ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center gap-3 place-items-center ">
           {list.map((curEle, index) => {
             return (
               <div className=" flex items-center gap-3 bg-blue-100 p-3 rounded-md h-[60px] w-[250px]">
@@ -44,7 +44,7 @@ const ShopingMenu = () => {
           })}
         </div>
       </div>
-      <HomeProducts/>
+      <HomeProducts />
     </>
   );
 };
