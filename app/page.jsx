@@ -24,13 +24,13 @@ const products = [
 const page = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-between items-center bg-blue-200 p-5 md:p-10 ">
+      <div className="flex flex-col md:flex-row justify-between items-center bg-blue-200 p-5 md:p-10 mt-2 ">
         <div className="flex w-full flex-col gap-2 md:gap-5 text-center md:text-left">
           <h1 className="text-xl md:text-2xl font-bold text-blue-950 w-[250px]">
             The Best Note Book Collection 2024
           </h1>
           <Link
-            href="/contact"
+            href="/product"
             className="flex items-center gap-2 bg-blue-800  text-white hover:bg-blue-500  rounded-lg text-xs h-[40px] w-[150px] justify-center"
           >
             Shop Now

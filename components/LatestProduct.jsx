@@ -11,8 +11,8 @@ const LatestProduct = () => {
             <p className="text-white text-xl">Apple iPad 10.2 10th Gen 2024</p>
             <p className="text-white">$1000</p>
             <Link
-              href="/"
-              className="flex items-center gap-2 bg-black text-white  rounded-lg text-xs h-[40px] w-[150px] justify-center"
+              href="/product"
+              className="flex items-center gap-2 bg-black text-white hover:bg-white hover:text-black rounded-lg text-xs h-[40px] w-[150px] justify-center"
             >
               Shop Now
               <FaArrowRightLong />

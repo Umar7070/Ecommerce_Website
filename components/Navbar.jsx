@@ -25,11 +25,11 @@ const Navbar = () => {
     console.log(pathname)
   return (
     <>
-    <div className="container flex gap-6 mt-6 shadow-lg">
+    <div className="container flex gap-6 mt-8">
         {
             links.map((curEle,index)=>{
                 return(
-                    <Link href={curEle.path} >{curEle.name}</Link>
+                    <Link href={curEle.path} className="capitalize text-sm" >{curEle.name}</Link>
                 )
             })
         }
