@@ -20,7 +20,7 @@ const producat = [
 },
 {
     id:3,
-    title:"Cancelling Headphones Wireless.",
+    title:"Cancelling Headphones Wireless is available.",
     name: 'Headphone',
     price: '$49',
     img: './img/tp3.jpg'
@@ -113,6 +113,7 @@ const HomeProducts = () => {
         })}
       </div>
       <LatestProduct />
+
     </div>
   );
 };
