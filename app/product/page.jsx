@@ -1,7 +1,11 @@
 // import React from 'react'
+"use client";
+
 import { BsCart } from "react-icons/bs";
 import { FaRegEye } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
+import CardModal from "@/components/CardModal";
+import { useState } from "react";
 const producat = [
   {
     id: 1,
@@ -19,7 +23,7 @@ const producat = [
   },
   {
     id: 3,
-    title: "Cancelling Headphones Wireless.",
+    title: "Cancelling Headphones Wireless available.",
     name: "Headphone",
     price: "49$",
     img: "./img/tp3.jpg",
@@ -83,6 +87,12 @@ const producat = [
 ];
 
 const Product = () => {
+  const [open, setOpen] = useState(false)
+
+  const onModalClose = () => {
+    setOpen(false)
+  }
+
   return (
     <>
       <div className="container mt-10">
@@ -102,11 +112,13 @@ const Product = () => {
             {producat.map((curEle, index) => {
               return (
                 <>
-                  <div className=" border border-gray-600  hover:scale-110 transition-transform duration-500">
+                  <div className=" border border-gray-600  hover:scale-110 transition-transform duration-500 relative">
                     <img src={curEle.img} alt="" />
-                    <div className="absolute top-5 right-3 flex flex-col  gap-2 p-1 shadow-lg ">
+                    <div className="absolute top-5 right-5 flex flex-col  gap-2 p-1 shadow-lg ">
                       <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white  " />
-                      <FaRegEye className="text-[25px] py-1 hover:bg-blue-500 hover:text-white " />
+                      <FaRegEye className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" 
+                      onClick={() => setOpen(true)}
+                      />
                       <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                     </div>
                     <p className="text-blue-950 mx-7 hover:text-blue-800">
@@ -125,6 +137,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <CardModal showModal={open} onModalClose={onModalClose}/>
     </>
   );
 };
