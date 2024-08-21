@@ -1,9 +1,20 @@
-import React from "react";
+'use client'
+
+import React, { useState } from "react";
 import { LuUser2 } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
 import { IoBagCheckOutline } from "react-icons/io5";
 
 const Header = () => {
+  const [searchProduct,setSearchProduct]=useState('')
+  const [items,setItems]=useState([])
+
+  const searchItem =()=>{
+    setItems([...items,searchProduct])
+    setSearchProduct('')
+
+  }
+  console.log(searchProduct)
   return (
     <>
       <div className=" container w-full flex justify-between items-center py-3    mt-5">
@@ -11,9 +22,9 @@ const Header = () => {
           <img src="/img/logo.svg" alt="" />
         </div>
         <div className="search flex border border-blue-700 rounded-tl-md rounded-bl-md ">
-          <input type="text" className=" outline-none p-2 " />
+          <input type="text" className=" outline-none p-2 " value={searchProduct} onChange={(e)=>setSearchProduct(e.target.value)} />
           <div>
-            <button className="bg-blue-600 text-white p-3 text-sm  w-[100px] ">
+            <button className="bg-blue-600 text-white p-3 text-sm  w-[100px] "  onClick={(searchItem)}>
               search
             </button>
           </div>

@@ -1,13 +1,16 @@
-'use client'
+"use client";
+import { RxCross2 } from "react-icons/rx";
 
-import { useState } from 'react'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
-// import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-
-export default function CardModal({showModal, onModalClose}) {
-
+export default function CardModal({ showModal, onModalClose }) {
   return (
     <Dialog open={showModal} onClose={onModalClose} className="relative z-10">
       <DialogBackdrop
@@ -21,45 +24,41 @@ export default function CardModal({showModal, onModalClose}) {
             transition
             className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
-            <div className="bg-red-700 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae dolorum nemo nihil delectus! Odio quia nisi natus? Ab laudantium, amet suscipit id accusantium fugit labore odit possimus necessitatibus molestiae!</h1>
-              {/* <div className="sm:flex sm:items-start">
-                <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                  <ExclamationTriangleIcon aria-hidden="true" className="h-6 w-6 text-red-600" />
+            <div className="container px-4 pb-4 pt-5 sm:p-6 sm:pb-4 w-full  mx-auto p-10 ">
+              <div className="relative">
+                <RxCross2 className=" absolute top-0 right-2" />
+              </div>
+              <div className="flex justify-between gap-10">
+                <div className="w-[40%] mt-10">
+                  <img
+                    src="/img/p10.jpg"
+                    alt=""
+                    className="h-[200px] w-[250px] border border-gray-950 p-3"
+                  />
                 </div>
-                <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                  <DialogTitle as="h3" className="text-base font-semibold leading-6 text-gray-900">
-                    Deactivate account
-                  </DialogTitle>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      Are you sure you want to deactivate your account? All of your data will be permanently removed.
-                      This action cannot be undone.
+                <div className="w-[60%]">
+                  <div className="mt-10">
+                    <p className="text-sm text-blue-700">tablate</p>
+                    <p className="text-xm text-gray-700">
+                      Galaxy Tab S6 Lite 10.4-inch Android Tablet 128GB.
                     </p>
+                    <p className="text-xm text-gray-700 ">
+                      a screen veryone will love whether your family is
+                      streaming or video chatting with friend tablet a8
+                    </p>
+                    <p className="mt-5">$72</p>
+                    <div>
+                      <button className="bg-black text-white h-[40px] w-[150px] text-sm mt-10 capitalize">
+                        add to cart
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div> */}
+              </div>
             </div>
-            {/* <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-              <button
-                type="button"
-                onClick={() => onModalClose()}
-                className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
-              >
-                Deactivate
-              </button>
-              <button
-                type="button"
-                data-autofocus
-                onClick={() => onModalClose()}
-                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-              >
-                Cancel
-              </button>
-            </div> */}
           </DialogPanel>
         </div>
       </div>
     </Dialog>
-  )
+  );
 }
