@@ -100,9 +100,13 @@ const Product = () => {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState(productDetail)
 
+  // modal close ?
+
   const onModalClose = () => {
     setOpen(false);
   };
+
+  
 
   const searchProduct = (ele) => {
     const update = productDetail.filter((cur) => {
