@@ -4,7 +4,7 @@ import Link from "next/link";
 const LatestProduct = () => {
   return (
     <>
-      <div className="container bg-blue-600 w-full grid grid-cols-1">
+      <div className=" bg-blue-600 w-full grid grid-cols-1 border-2 border-green-950 p-10">
         <div className=" flex justify-between items-center p-6">
           <div className="flex gap-4 flex-col">
             <p className="text-white text-sm ">Latest Technology Addedd</p>

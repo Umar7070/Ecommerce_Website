@@ -86,27 +86,24 @@ const productDetail = [
     price: "200$",
     img: "./img/p11.jpg",
   },
-  {
-    id: 12,
-    title: "CPU Cooler 2 Heat Pipes 12mm 4 Pin PWM RGB for Intel.",
-    name: "Heat pipe",
-    price: "150$",
-    img: "./img/p12.png",
-  },
-  
+  // {
+  //   id: 12,
+  //   title: "CPU Cooler 2 Heat Pipes 12mm 4 Pin PWM RGB for Intel.",
+  //   name: "Heat pipe",
+  //   price: "150$",
+  //   img: "./img/p12.jpg",
+  // },
 ];
 
 const Product = () => {
   const [open, setOpen] = useState(false);
-  const [product, setProduct] = useState(productDetail)
+  const [product, setProduct] = useState(productDetail);
 
   // modal close ?
 
   const onModalClose = () => {
     setOpen(false);
   };
-
-  
 
   const searchProduct = (ele) => {
     const update = productDetail.filter((cur) => {
@@ -117,9 +114,9 @@ const Product = () => {
 
   // allProducts _____________
 
-  const allProducts =()=>{
-    setProduct(productDetail)
-  }
+  const allProducts = () => {
+    setProduct(productDetail);
+  };
 
   return (
     <>
@@ -128,7 +125,7 @@ const Product = () => {
         <div className="flex justify-between">
           <div className="w-[20%] ">
             <ul className="flex flex-col gap-4 capitalize mt-10 text-blue-600 text-md cursor-pointer">
-              <li onClick={()=>allProducts()}>all product</li>
+              <li onClick={() => allProducts()}>all product</li>
               <li onClick={() => searchProduct("Tablet")}>tablet</li>
               <li onClick={() => searchProduct("Smart Watch")}>smart watch</li>
               <li onClick={() => searchProduct("Headphone")}>headphone</li>
@@ -176,25 +173,4 @@ const Product = () => {
 
 export default Product;
 
-// const filterProduct = (ele) => {
-//   const update = Productdetail.filter((cur) => {
-//     return cur.Cat === ele;
-//   });
-//   setProducts(update);
-// };
 
-// const AllProducts = () => {
-//   setProducts(Productdetail);
-// };
-
-{
-  /* <ul>
-<li onClick={()=> AllProducts()}>All Products</li>
-  <li onClick={()=>filterProduct("Tablet")}>Tablet</li>
-  <li onClick={()=>filterProduct("Smart Watch")}>SmartWatch </li>
-  <li onClick={()=>filterProduct("Headphone")}>Headphone</li>
-  <li onClick={()=>filterProduct("Camera")}>Camera</li>
-  <li onClick={()=>filterProduct("Gaming")}>Gaming</li>
-  <li onClick={()=>filterProduct("Tablet")}>Tablet</li>
-</ul> */
-}

@@ -85,7 +85,8 @@ const producat = [
 ];
 const HomeProducts = () => {
   return (
-    <div className="container w-full mt-10">
+    <div className=" w-full ">
+      <div className="container w-full my-10">
       <h2 className="text-2xl font-bold text-blue-950">Top Product</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-center  gap-6 p-5 shadow-lg mt-10">
         {producat.map((curEle, index) => {
@@ -111,6 +112,7 @@ const HomeProducts = () => {
             </>
           );
         })}
+        </div>
       </div>
       <LatestProduct />
 
