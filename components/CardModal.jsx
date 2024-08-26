@@ -10,7 +10,6 @@ import {
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 export default function CardModal({ showModal, onModalClose }) {
-  const [close, setClose] = useState(true);
 
   const closeModal = () => {
     setClose(!close);
@@ -28,7 +27,6 @@ export default function CardModal({ showModal, onModalClose }) {
             transition
             className="relative transform rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-4xl data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
-            {close ? (
               <div className="px-4 pb-4 pt-5 sm:p-6 sm:pb-4  rounded w-[100%] mx-auto">
                 <div className="relative">
                   <RxCross2
@@ -64,7 +62,6 @@ export default function CardModal({ showModal, onModalClose }) {
                   </div>
                 </div>
               </div>
-            ) : null}
           </DialogPanel>
         </div>
       </div>

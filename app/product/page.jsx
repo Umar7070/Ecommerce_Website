@@ -118,6 +118,11 @@ const Product = () => {
     setProduct(productDetail);
   };
 
+  const handleViewClick = (curEle) => {
+    setSelectedProduct(curEle); 
+    setOpen(true); 
+  };
+
   return (
     <>
       <div className="container mt-10">
@@ -146,7 +151,7 @@ const Product = () => {
                       <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white  " />
                       <FaRegEye
                         className="text-[25px] py-1 hover:bg-blue-500 hover:text-white"
-                        onClick={() => setOpen(true)}
+                        onClick={() =>handleViewClick (curEle)}
                       />
                       <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                     </div>
@@ -166,7 +171,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <CardModal showModal={open} onModalClose={onModalClose} />
+      <CardModal showModal={open} onModalClose={onModalClose}  />
     </>
   );
 };

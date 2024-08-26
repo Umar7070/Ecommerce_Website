@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import { LuUser2 } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
 import { IoBagCheckOutline } from "react-icons/io5";
-
+import Link from "next/link";
 const Header = () => {
   const [searchProduct, setSearchProduct] = useState("");
 
-  const searchItem = () => {
-    alert("click me");
-  };
+  const searchItem =()=>{
+    
+  }
 
   return (
     <>
@@ -28,7 +28,7 @@ const Header = () => {
           <div>
             <button
               className="bg-blue-600 text-white p-3 text-sm  w-[100px] "
-              onClick={() => searchItem(searchProduct)}
+              onClick={() => searchItem()}
             >
               search
             </button>
@@ -41,7 +41,9 @@ const Header = () => {
           </div>
           <div className="cart flex gap-3 text-blue-700 text-[20px]">
             <FaRegHeart />
+            <Link href='/addtocart'>
             <IoBagCheckOutline />
+            </Link>
           </div>
         </div>
       </div>
