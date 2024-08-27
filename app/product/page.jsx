@@ -86,13 +86,6 @@ const productDetail = [
     price: "200$",
     img: "./img/p11.jpg",
   },
-  // {
-  //   id: 12,
-  //   title: "CPU Cooler 2 Heat Pipes 12mm 4 Pin PWM RGB for Intel.",
-  //   name: "Heat pipe",
-  //   price: "150$",
-  //   img: "./img/p12.jpg",
-  // },
 ];
 
 const Product = () => {
@@ -116,11 +109,6 @@ const Product = () => {
 
   const allProducts = () => {
     setProduct(productDetail);
-  };
-
-  const handleViewClick = (curEle) => {
-    setSelectedProduct(curEle); 
-    setOpen(true); 
   };
 
   return (
@@ -151,7 +139,7 @@ const Product = () => {
                       <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white  " />
                       <FaRegEye
                         className="text-[25px] py-1 hover:bg-blue-500 hover:text-white"
-                        onClick={() =>handleViewClick (curEle)}
+                        onClick={() => setOpen(true)}
                       />
                       <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                     </div>
@@ -171,11 +159,9 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <CardModal showModal={open} onModalClose={onModalClose}  />
+      <CardModal showModal={open} onModalClose={onModalClose} />
     </>
   );
 };
 
 export default Product;
-
-

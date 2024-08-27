@@ -1,7 +1,11 @@
+'use client'
+
 import { BsCart } from "react-icons/bs";
 import { FaRegEye } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 import LatestProduct from "./LatestProduct";
+import { useState } from "react";
+import CardModal from "./CardModal";
 
 const producat = [
   {
@@ -84,6 +88,12 @@ const producat = [
 
 ];
 const HomeProducts = () => {
+  const [toggleModal,setToggleModal]=useState(false)
+
+
+  const onModalClose =()=>{
+    setToggleModal(false)
+  }
   return (
     <div className=" w-full ">
       <div className="container w-full my-10">
@@ -96,7 +106,7 @@ const HomeProducts = () => {
                 <img src={curEle.img} alt="" />
                 <div className="absolute top-5 right-3 flex flex-col  gap-2 p-1 shadow-lg ">
                   <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white  " />
-                  <FaRegEye className="text-[25px] py-1 hover:bg-blue-500 hover:text-white " />
+                  <FaRegEye  onClick={()=>setToggleModal(true)}  className="text-[25px] py-1 hover:bg-blue-500 hover:text-white " />
                   <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                 </div>
                 <p className="text-blue-950 mx-7 hover:text-red-950">
@@ -115,6 +125,7 @@ const HomeProducts = () => {
         </div>
       </div>
       <LatestProduct />
+      <CardModal   showModal={toggleModal} onModalClose={onModalClose}  />
 
     </div>
   );

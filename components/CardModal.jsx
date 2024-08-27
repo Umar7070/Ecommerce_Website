@@ -30,8 +30,8 @@ export default function CardModal({ showModal, onModalClose }) {
               <div className="px-4 pb-4 pt-5 sm:p-6 sm:pb-4  rounded w-[100%] mx-auto">
                 <div className="relative">
                   <RxCross2
-                    className="absolute top-0 right-2"
-                    onClick={closeModal}
+                    className="absolute top-0 right-2 text-3xl text-gray-700"
+                    onClick={onModalClose}
                   />
                 </div>
                 <div className="flex justify-between gap-10">
