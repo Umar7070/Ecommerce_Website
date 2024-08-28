@@ -8,9 +8,9 @@ import Link from "next/link";
 const Header = () => {
   const [searchProduct, setSearchProduct] = useState("");
 
-  const searchItem =()=>{
-    
-  }
+  
+
+  const searchItem = () => {};
 
   return (
     <>
@@ -41,8 +41,8 @@ const Header = () => {
           </div>
           <div className="cart flex gap-3 text-blue-700 text-[20px]">
             <FaRegHeart />
-            <Link href='/addtocart'>
-            <IoBagCheckOutline />
+            <Link href="/addtocart">
+              <IoBagCheckOutline  />
             </Link>
           </div>
         </div>

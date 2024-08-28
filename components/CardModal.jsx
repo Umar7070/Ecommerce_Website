@@ -9,7 +9,8 @@ import {
 } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-export default function CardModal({ showModal, onModalClose }) {
+export default function CardModal({ showModal, onModalClose,product }) {
+console.log("product============>", product);
 
   const closeModal = () => {
     setClose(!close);
@@ -37,22 +38,21 @@ export default function CardModal({ showModal, onModalClose }) {
                 <div className="flex justify-between gap-10">
                   <div className="w-[40%] mt-10">
                     <img
-                      src="/img/p10.jpg"
+                      src={product.img}
                       alt=""
                       className="h-[200px] w-[250px] border border-gray-950 p-3"
                     />
                   </div>
                   <div className="w-[60%]">
                     <div className="mt-10">
-                      <p className="text-sm text-blue-700 capitalize">tablate</p>
+                      <p className="text-sm text-blue-700 capitalize">{product?.name}</p>
                       <p className="text-xm text-gray-700 text-sm py-2">
                         Galaxy Tab S6 Lite 10.4-inch Android Tablet 128GB.
                       </p>
                       <p className="text-xm text-gray-700 text-sm hover:text-blue-700">
-                        A screen veryone will love whether your family is
-                        streaming or video chatting with friend tablet a8
+                       {product?.title}
                       </p>
-                      <p className="mt-5 hover:text-blue-700 font-bold">$72</p>
+                      <p className="mt-5 hover:text-blue-700 font-bold">{product?.price}</p>
                       <div>
                         <button className="bg-black text-white h-[40px] w-[150px] text-sm mt-10 rounded-md  capitalize">
                           add to cart

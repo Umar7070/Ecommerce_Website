@@ -91,6 +91,7 @@ const productDetail = [
 const Product = () => {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState(productDetail);
+  const [selectProduct,setSelectProduct]=useState({})
 
   // modal close ?
 
@@ -110,6 +111,12 @@ const Product = () => {
   const allProducts = () => {
     setProduct(productDetail);
   };
+
+
+  const handleIconClick =(curEle)=>{
+    setSelectProduct(curEle)
+    setOpen(true)
+  }
 
   return (
     <>
@@ -139,7 +146,8 @@ const Product = () => {
                       <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white  " />
                       <FaRegEye
                         className="text-[25px] py-1 hover:bg-blue-500 hover:text-white"
-                        onClick={() => setOpen(true)}
+                        // onClick={() => setOpen(true)}
+                        onClick={()=>handleIconClick(curEle)}
                       />
                       <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                     </div>
@@ -159,7 +167,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <CardModal showModal={open} onModalClose={onModalClose} />
+      <CardModal showModal={open} onModalClose={onModalClose}product={selectProduct} />
     </>
   );
 };

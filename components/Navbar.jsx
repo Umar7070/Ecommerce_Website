@@ -19,10 +19,7 @@ const links =[
         name:'product',
         path:'/product'
     },
-    {
-        name:'addtocart',
-        path:'/addtocart'
-    },
+   
 ]
 const Navbar = () => {
     const pathname = usePathname()
