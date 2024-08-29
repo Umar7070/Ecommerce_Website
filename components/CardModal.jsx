@@ -31,28 +31,27 @@ console.log("product============>", product);
               <div className="px-4 pb-4 pt-5 sm:p-6 sm:pb-4  rounded w-[100%] mx-auto">
                 <div className="relative">
                   <RxCross2
-                    className="absolute top-0 right-2 text-3xl text-gray-700"
+                    className="absolute top-0 right-2 text-3xl text-gray-700 cursor-pointer hover:text-blue-600"
                     onClick={onModalClose}
                   />
                 </div>
                 <div className="flex justify-between gap-10">
-                  <div className="w-[40%] mt-10">
+                  <div className="w-[40%] my-10">
                     <img
-                      src={product.img}
-                      alt=""
+                      src={product?.img}
                       className="h-[200px] w-[250px] border border-gray-950 p-3"
                     />
                   </div>
                   <div className="w-[60%]">
-                    <div className="mt-10">
-                      <p className="text-sm text-blue-700 capitalize">{product?.name}</p>
-                      <p className="text-xm text-gray-700 text-sm py-2">
+                    <div className="my-10">
+                      <p className=" text-blue-700 capitalize font-bold text-2xl">{product?.name}</p>
+                      <p className="text-md text-gray-700  py-3">
                         Galaxy Tab S6 Lite 10.4-inch Android Tablet 128GB.
                       </p>
                       <p className="text-xm text-gray-700 text-sm hover:text-blue-700">
                        {product?.title}
                       </p>
-                      <p className="mt-5 hover:text-blue-700 font-bold">{product?.price}</p>
+                      <p className="mt-5 hover:text-blue-700 font-bold text-gray-900 text-2xl">{product?.price}</p>
                       <div>
                         <button className="bg-black text-white h-[40px] w-[150px] text-sm mt-10 rounded-md  capitalize">
                           add to cart

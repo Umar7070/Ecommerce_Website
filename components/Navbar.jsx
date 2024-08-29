@@ -30,7 +30,7 @@ const Navbar = () => {
         {
             links.map((curEle,index)=>{
                 return(
-                    <Link href={curEle.path} className="capitalize text-sm" >{curEle.name}</Link>
+                    <Link  href={curEle.path} className={`uppercase font-bold ${curEle.path===pathname && ' border-b-2 border-red-950  text-blue-800 font-bold '}`} >{curEle.name}</Link>
                 )
             })
         }

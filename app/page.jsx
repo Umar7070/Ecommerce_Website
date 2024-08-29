@@ -31,7 +31,7 @@ const page = () => {
           </h1>
           <Link
             href="/product"
-            className="flex items-center gap-2 bg-blue-800  text-white hover:bg-blue-500  rounded-lg text-xs h-[40px] w-[150px] justify-center"
+            className="flex items-center gap-2 bg-blue-800  text-white hover:bg-blue-500  rounded-lg text-lg h-[40px] w-[150px] justify-center"
           >
             Shop Now
             <FaArrowRightLong />
@@ -54,12 +54,12 @@ const page = () => {
             return (
               <>
                 <div className="flex flex-col items-center justify-center gap-2">
-                  <div className="bg-blue-200 rounded-full flex  h-[200px] w-[200px] justify-center items-center">
-                    <div className="hover:scale-110 transition-transform duration-300">
+                  <div className="bg-blue-200 rounded-full flex  h-[200px] w-[200px] justify-center items-center cursor-pointer">
+                    <div className="hover:scale-110 transition-transform duration-300 ">
                       <img src={curEle.img} alt="" />
                     </div>
                   </div>
-                  <p className="text-gray-300">{curEle.title}</p>
+                  <p className="text-blue-800 font-bold">{curEle.title}</p>
                 </div>
               </>
             );
