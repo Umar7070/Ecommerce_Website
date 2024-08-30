@@ -113,7 +113,7 @@ const HomeProducts = () => {
                       <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                       <FaRegEye
                         onClick={() => handleIconClick(curEle)}
-                        className="text-[25px] py-1 hover:bg-blue-500 hover:text-white"
+                        className="text-[25px] py-1 hover:bg-blue-500 hover:text-white cursor-pointer"
                       />
                       <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                     </div>

@@ -29,15 +29,15 @@ const list = [
 const ShopingMenu = () => {
   return (
     <>
-      <div className="container w-full mt-[50px]">
+      <div className="container w-full my-[50px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center gap-3 place-items-center ">
           {list.map((curEle, index) => {
             return (
-              <div className=" flex items-center gap-3 bg-blue-100 p-3 rounded-md h-[60px] w-[250px]">
+              <div className=" flex items-center gap-3 bg-blue-100 p-3 rounded-md h-[60px] w-[250px] cursor-pointer">
                 <div className="text-red-800 text-2xl">{curEle.icon}</div>
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm">{curEle.name}</p>
-                  <p className="text-xs text-gray-500">{curEle.title}</p>
+                  <p className="text-md font-bold">{curEle.name}</p>
+                  <p className="text-sm font-bold text-gray-500">{curEle.title}</p>
                 </div>
               </div>
             );

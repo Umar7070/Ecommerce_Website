@@ -7,12 +7,12 @@ const LatestProduct = () => {
       <div className=" bg-blue-600 w-full grid grid-cols-1 border-2 border-green-950 p-10">
         <div className=" flex justify-between items-center p-6">
           <div className="flex gap-4 flex-col">
-            <p className="text-white text-sm ">Latest Technology Addedd</p>
+            <p className="text-white text-2xl font-bold ">Latest Technology Addedd</p>
             <p className="text-white text-xl">Apple iPad 10.2 10th Gen 2024</p>
             <p className="text-white">$1000</p>
             <Link
               href="/product"
-              className="flex items-center gap-2 bg-black text-white hover:bg-white hover:text-black rounded-lg text-xs h-[40px] w-[150px] justify-center"
+              className="flex items-center gap-2 bg-black text-white hover:bg-white hover:text-black rounded-lg text-xl h-[40px] w-[150px] justify-center"
             >
               Shop Now
               <FaArrowRightLong />
