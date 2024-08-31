@@ -1,5 +1,4 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import Link from "next/link";
 
 const Footer = () => {
   return (
