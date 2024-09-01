@@ -6,6 +6,7 @@ import { FaRegEye } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 import CardModal from "@/components/CardModal";
 import { useState } from "react";
+import { useRouter } from "next/router";
 const productDetail = [
   {
     id: 1,
@@ -92,6 +93,7 @@ const Product = () => {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState(productDetail);
   const [selectProduct, setSelectProduct] = useState({});
+  const router = useRouter
 
   // modal close ?
 
@@ -117,6 +119,12 @@ const Product = () => {
     setOpen(true);
   };
 
+  // addToCart
+  const addToCart =()=>{
+    alert('cart add')
+    router.push('/product')
+  }
+
   return (
     <>
       <div className="container mt-10">
@@ -139,30 +147,10 @@ const Product = () => {
             {product.map((curEle, index) => {
               return (
                 <div key={index}>
-                  {/* <div className=" border rounded-lg  hover:scale-110 transition-transform duration-500 relative">
-                    <img src={curEle.img} alt="" />
-                    <div className="absolute top-5 right-5 flex flex-col  gap-2 p-1 shadow-lg ">
-                      <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white  " />
-                      <FaRegEye
-                        className="text-[25px] py-1 hover:bg-blue-500 hover:text-white cursor-pointer"
-                        onClick={() => handleIconClick(curEle)}
-                      />
-                      <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
-                    </div>
-                    <p className="text-blue-950 mx-7 hover:text-blue-800 text-xl font-bold">
-                      {curEle.name}
-                    </p>
-                    <p className=" text-gray-500 p-2 hover:text-blue-800 text-md">
-                      {curEle.title}
-                    </p>
-                    <p className="mx-7 mb-6 hover:text-blue-800 text-xl font-bold">
-                      {curEle.price}
-                    </p>
-                  </div> */}
                   <div className="border rounded-lg hover:scale-110 transition-transform duration-500 relative group">
                     <img src={curEle.img} alt="" />
                     <div className="absolute top-5 right-3 flex-col gap-2 p-1 shadow-lg hidden group-hover:flex group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-5 opacity-0">
-                      <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
+                      <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" onClick={addToCart}/>
                       <FaRegEye
                         onClick={() => handleIconClick(curEle)}
                         className="text-[25px] py-1 hover:bg-blue-500 hover:text-white cursor-pointer"

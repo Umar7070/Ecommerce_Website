@@ -3,6 +3,7 @@ import "./globals.css";
 import TopNav from "@/components/TopNav";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { MyContext } from "@/context/MyContext";
 
 const jetbrainMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -19,11 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={jetbrainMono.variable}>
-        <TopNav />
-        <Navbar />
-
-        {children}
-        <Footer/>
+        <MyContext>
+          <TopNav />
+          <Navbar />
+          {children}
+          <Footer />
+        </MyContext>
       </body>
     </html>
   );
