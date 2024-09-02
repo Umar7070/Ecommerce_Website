@@ -1,17 +1,29 @@
-import React from 'react'
-import { createContext } from 'vm'
-export const myProvider= createContext()
+"use client";
 
-const MyContext = ({children}) => {
+import React, { useState } from "react";
+import { createContext } from "react";
+export const UserContext = createContext();
+
+const MyContext = ({ children }) => {
+  const [cardItem, setCardItem] = useState([]);
+
+  const clickhandle = (curEle) => {
+    console.log("fun called", curEle);
+    alert("cart added");
+    setCardItem([...cardItem, curEle]);
+  };
+  console.log(cardItem);
   return (
-    <>
-    <myProvider.myProvider value={{}}>
-        {children}
+    <UserContext.Provider
+      value={{
+        clickhandle,
+        cardItem,
+        setCardItem,
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
+};
 
-    </myProvider.myProvider>
-      
-    </>
-  )
-}
-
-export default MyContext
+export default MyContext;

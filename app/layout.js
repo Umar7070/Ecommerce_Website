@@ -3,7 +3,7 @@ import "./globals.css";
 import TopNav from "@/components/TopNav";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MyContext } from "@/context/MyContext";
+import MyContext from "@/context/MyContext";
 
 const jetbrainMono = JetBrains_Mono({
   subsets: ["latin"],

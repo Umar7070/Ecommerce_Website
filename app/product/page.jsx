@@ -5,8 +5,9 @@ import { BsCart } from "react-icons/bs";
 import { FaRegEye } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 import CardModal from "@/components/CardModal";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useRouter } from "next/router";
+import { UserContext } from "@/context/MyContext";
 const productDetail = [
   {
     id: 1,
@@ -90,6 +91,9 @@ const productDetail = [
 ];
 
 const Product = () => {
+
+  const {clickhandle,curEle} = useContext(UserContext)
+
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState(productDetail);
   const [selectProduct, setSelectProduct] = useState({});
@@ -120,10 +124,10 @@ const Product = () => {
   };
 
   // addToCart
-  const addToCart =()=>{
-    alert('cart add')
-    router.push('/product')
-  }
+  // const addToCart =()=>{
+  //   alert('cart add')
+  // }
+  
 
   return (
     <>
@@ -150,7 +154,7 @@ const Product = () => {
                   <div className="border rounded-lg hover:scale-110 transition-transform duration-500 relative group">
                     <img src={curEle.img} alt="" />
                     <div className="absolute top-5 right-3 flex-col gap-2 p-1 shadow-lg hidden group-hover:flex group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-5 opacity-0">
-                      <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" onClick={addToCart}/>
+                      <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" onClick={()=>clickhandle(curEle)}/>
                       <FaRegEye
                         onClick={() => handleIconClick(curEle)}
                         className="text-[25px] py-1 hover:bg-blue-500 hover:text-white cursor-pointer"
