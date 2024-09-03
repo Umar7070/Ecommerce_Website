@@ -8,7 +8,8 @@ const page = () => {
   const { cardItem, setCardItem } = useContext(UserContext);
   console.log(cardItem, "umarrrrrr");
 
-  const handleCard = () => {
+  const handleCard = (ele) => {
+    const del = setCardItem()
     setToggle(false);
   };
   return (
@@ -44,7 +45,7 @@ const page = () => {
                   <p className="text-lg text-gray-600 my-5">{curEle.title}</p>
                   <RxCross1
                     className="text-2xl hover:text-blue-700 cursor-pointer  "
-                    onClick={handleCard}
+                    onClick={()=>handleCard(curEle)}
                   />
                 </div>
                 <p>

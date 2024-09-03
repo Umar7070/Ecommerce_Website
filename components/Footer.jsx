@@ -12,11 +12,11 @@ const Footer = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad magni
               sed voluptas fugiat eum quos.
             </p>
-            <div className="flex gap-4 mt-4">
-              <FaFacebookF className="border border-gray-700 text-[30px] py-1 rounded-sm hover:bg-blue-700 hover:text-white" />
-              <FaInstagram className="border border-gray-700 text-[30px] py-1 rounded-sm hover:bg-blue-700 hover:text-white" />
-              <FaTwitter className="border border-gray-700 text-[30px] py-1 rounded-sm hover:bg-blue-700 hover:text-white" />
-              <FaYoutube className="border border-gray-700 text-[30px] py-1 rounded-sm hover:bg-blue-700 hover:text-white" />
+            <div className="flex gap-4 mt-4 ">
+              <FaFacebookF className="border border-gray-700 text-[30px] py-1 rounded-sm hover:bg-blue-700 hover:text-white hover:border-none  " />
+              <FaInstagram className="border border-gray-700 text-[30px] py-1 rounded-sm hover:bg-blue-700 hover:text-white hover:border-none " />
+              <FaTwitter className="border border-gray-700 text-[30px] py-1 rounded-sm hover:bg-blue-700 hover:text-white hover:border-none " />
+              <FaYoutube className="border border-gray-700 text-[30px] py-1 rounded-sm hover:bg-blue-700 hover:text-white hover:border-none " />
             </div>
           </div>
 
