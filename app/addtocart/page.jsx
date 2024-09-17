@@ -5,16 +5,13 @@ import { RxCross1 } from "react-icons/rx";
 import { UserContext } from "@/context/MyContext";
 
 const page = () => {
-  const { cardItem, setCardItem } = useContext(UserContext);
-  console.log(cardItem, "umarrrrrr");
+  const { cardItem, setCardItem ,deleteItem,incrementHandle} = useContext(UserContext);
 
-  const handleCard = (ele) => {
-    const del = setCardItem()
-    setToggle(false);
-  };
   return (
     <div>
-      <div>
+      {
+        cardItem.length === 0 ?
+        <div>
         <div className="flex justify-center items-center flex-col my-10">
           <h1 className="text-gray-800 uppercase font-bold text-3xl">
             cart is empty
@@ -25,7 +22,9 @@ const page = () => {
             </button>
           </Link>
         </div>
-      </div>
+      </div>:''
+      }
+      
       {cardItem.map((curEle, index) => {
         return (
           <>
@@ -33,7 +32,7 @@ const page = () => {
               <div>
                 <img
                   src={curEle.img}
-                  alt=""
+                  alt="card image"
                   className=" p-3 border bg-gray-300"
                 />
               </div>
@@ -43,10 +42,7 @@ const page = () => {
                 </h1>
                 <div className="flex gap-[100px]">
                   <p className="text-lg text-gray-600 my-5">{curEle.title}</p>
-                  <RxCross1
-                    className="text-2xl hover:text-blue-700 cursor-pointer  "
-                    onClick={()=>handleCard(curEle)}
-                  />
+                  <RxCross1  onClick={()=>deleteItem(curEle)} className="text-2xl hover:text-blue-700 cursor-pointer  " />
                 </div>
                 <p>
                   <span className="text-2xl text-blue-700 font-bold">
@@ -55,7 +51,7 @@ const page = () => {
                   {curEle.price}
                 </p>
                 <div className="my-3 text-4xl  font-bold cursor-pointer flex gap-3">
-                  <p className="text-blue-800">+</p> <span>1</span>
+                  <p   onClick={()=>incrementHandle(curEle)} className="text-blue-800">+</p> <span>1</span>
                   <span className="text-blue-800 ">-</span>
                 </div>
                 <p className="uppercase font-bold flex gap-[10px] text-2xl text-gray-600">

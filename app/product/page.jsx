@@ -6,7 +6,6 @@ import { FaRegEye } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 import CardModal from "@/components/CardModal";
 import { useContext, useState } from "react";
-import { useRouter } from "next/router";
 import { UserContext } from "@/context/MyContext";
 const productDetail = [
   {
@@ -97,7 +96,6 @@ const Product = () => {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState(productDetail);
   const [selectProduct, setSelectProduct] = useState({});
-  const router = useRouter
 
   // modal close ?
 
@@ -123,10 +121,7 @@ const Product = () => {
     setOpen(true);
   };
 
-  // addToCart
-  // const addToCart =()=>{
-  //   alert('cart add')
-  // }
+  
   
 
   return (

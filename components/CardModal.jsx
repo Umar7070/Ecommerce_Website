@@ -1,6 +1,6 @@
 "use client";
 import { RxCross2 } from "react-icons/rx";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   Dialog,
   DialogBackdrop,
@@ -8,9 +8,11 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { UserContext } from "@/context/MyContext";
 
 export default function CardModal({ showModal, onModalClose,product }) {
-console.log("product============>", product);
+  const {CartModalAdd} = useContext(UserContext)
+console.log("product========", product);
 
   const closeModal = () => {
     setClose(!close);
@@ -53,7 +55,7 @@ console.log("product============>", product);
                       </p>
                       <p className="mt-5 hover:text-blue-700 font-bold text-gray-900 text-2xl">{product?.price}</p>
                       <div>
-                        <button className="bg-black text-white h-[40px] w-[150px] text-sm mt-10 rounded-md  capitalize">
+                        <button   onClick={()=>CartModalAdd(product)} className="bg-black text-white h-[40px] w-[150px] text-sm mt-10 rounded-md  capitalize"  >
                           add to cart
                         </button>
                       </div>

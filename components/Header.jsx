@@ -40,7 +40,9 @@ const Header = () => {
             <p className="text-sm text-gray-600">Hello Umar Tutorial</p>
           </div>
           <div className="cart flex gap-3 text-blue-700 text-[20px]">
-            <FaRegHeart />
+          <Link href='/favourite'>
+           <FaRegHeart />
+          </Link> 
             <Link href="/addtocart">
               <IoBagCheckOutline  />
             </Link>
