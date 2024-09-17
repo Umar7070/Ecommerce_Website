@@ -8,6 +8,7 @@ export const UserContext = createContext();
 
 const MyContext = ({ children }) => {
   const [cardItem, setCardItem] = useState([]);
+  const [favourite, setfavourite] = useState([]);
 
   const clickhandle = (curEle) => {
     toast.success("cart added", {
@@ -33,7 +34,7 @@ const MyContext = ({ children }) => {
   const incrementHandle = (curEle) => {
     alert("click me", curEle);
   };
-  // card modal add to car 
+  // card modal add to car
 
   const CartModalAdd = (product) => {
     toast.success("card added", product, {
@@ -44,6 +45,17 @@ const MyContext = ({ children }) => {
   };
   console.log(cardItem);
 
+  const addTofavourite = (curEle) => {
+    console.log("favourite products", curEle);
+    toast.success("add to favourite ",{
+      position:'top-center',
+      autoClose:1000
+
+    });
+    setfavourite([...favourite, curEle]);
+  };
+  console.log(favourite);
+
   return (
     <UserContext.Provider
       value={{
@@ -53,6 +65,9 @@ const MyContext = ({ children }) => {
         deleteItem,
         incrementHandle,
         CartModalAdd,
+        addTofavourite,
+        favourite,
+        setfavourite,
       }}
     >
       {children}

@@ -91,7 +91,7 @@ const productDetail = [
 
 const Product = () => {
 
-  const {clickhandle,curEle} = useContext(UserContext)
+  const {clickhandle,curEle,addTofavourite} = useContext(UserContext)
 
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState(productDetail);
@@ -154,15 +154,15 @@ const Product = () => {
                         onClick={() => handleIconClick(curEle)}
                         className="text-[25px] py-1 hover:bg-blue-500 hover:text-white cursor-pointer"
                       />
-                      <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
+                      <CiHeart  onClick={()=>addTofavourite(curEle)} className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                     </div>
-                    <p className="text-blue-950 mx-7  font-bold text-2xl hover:text-blue-700">
+                    <p className="text-blue-950 mx-7 text-center font-bold text-2xl hover:text-blue-700">
                       {curEle.name}
                     </p>
-                    <p className="text-md text-gray-500 p-2 font-bold ">
+                    <p className="text-sm text-center text-gray-500 p-2 font-bold ">
                       {curEle.title}
                     </p>
-                    <p className="mx-7 mb-6 hover:text-blue-700 font-bold text-2xl">
+                    <p className="mx-7  text-center mb-6 hover:text-blue-700 font-bold text-2xl">
                       {curEle.price}
                     </p>
                   </div>
