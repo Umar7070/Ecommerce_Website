@@ -10,6 +10,32 @@ const MyContext = ({ children }) => {
   const [cardItem, setCardItem] = useState([]);
   const [favourite, setfavourite] = useState([]);
 
+
+  // homeAddTofavourite 
+
+  const homeAddTofavourite =(curEle)=>{
+    console.log('addproduct',curEle)
+    toast.success('add to favourite',{
+      position:'top-center',
+      autoClose:1000
+    })
+    setfavourite([...favourite,curEle])
+
+  }
+  console.log(favourite)
+
+  // homeAddToCart
+
+  const homeAddToCart =(curEle)=>{
+    console.log('homeaddto cart',curEle)
+    alert('add to cart',curEle)
+    setCardItem([...cardItem,curEle])
+
+  }
+  console.log(cardItem)
+
+  // product component att to cart 
+
   const clickhandle = (curEle) => {
     toast.success("cart added", {
       position: "top-center",
@@ -68,6 +94,8 @@ const MyContext = ({ children }) => {
         addTofavourite,
         favourite,
         setfavourite,
+        homeAddToCart,
+        homeAddTofavourite
       }}
     >
       {children}

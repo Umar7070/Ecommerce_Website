@@ -4,8 +4,9 @@ import { BsCart } from "react-icons/bs";
 import { FaRegEye } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 import LatestProduct from "./LatestProduct";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CardModal from "./CardModal";
+import { UserContext } from "@/context/MyContext";
 
 const producat = [
   {
@@ -87,6 +88,7 @@ const producat = [
   },
 ];
 const HomeProducts = () => {
+  const {homeAddToCart,homeAddTofavourite}= useContext(UserContext)
   const [toggleModal, setToggleModal] = useState(false);
   const [selectProduct, setSelectProduct] = useState({});
 
@@ -110,17 +112,17 @@ const HomeProducts = () => {
                 <div className="border rounded-lg hover:scale-110 transition-transform duration-500 relative group">
                     <img src={curEle.img} alt="" />
                     <div className="absolute top-5 right-3 flex-col gap-2 p-1 shadow-lg hidden group-hover:flex group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-5 opacity-0">
-                      <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
+                      <BsCart   onClick={()=>homeAddToCart(curEle)} className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                       <FaRegEye
                         onClick={() => handleIconClick(curEle)}
                         className="text-[25px] py-1 hover:bg-blue-500 hover:text-white cursor-pointer"
                       />
-                      <CiHeart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
+                      <CiHeart  onClick={()=>homeAddTofavourite(curEle)} className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" />
                     </div>
                     <p className="text-blue-950 mx-7  font-bold text-2xl hover:text-blue-700">
                       {curEle.name}
                     </p>
-                    <p className="text-md text-gray-500 p-2 font-bold ">
+                    <p className="text-sm text-gray-500 p-2 font-bold ">
                       {curEle.title}
                     </p>
                     <p className="mx-7 mb-6 hover:text-blue-700 font-bold text-2xl">

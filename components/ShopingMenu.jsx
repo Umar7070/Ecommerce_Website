@@ -22,7 +22,7 @@ const list = [
   {
     icon: <FaHeadphones />,
     name: "Customer Support",
-    title: "Every Time Call Support",
+    title: "Every Time  Support",
   },
 ];
 
@@ -37,7 +37,7 @@ const ShopingMenu = () => {
                 <div className="text-red-800 text-2xl">{curEle.icon}</div>
                 <div className="flex flex-col gap-1">
                   <p className="text-md font-bold">{curEle.name}</p>
-                  <p className="text-sm font-bold text-gray-500">{curEle.title}</p>
+                  <p className="text-sm font-bold text-gray-500 ">{curEle.title}</p>
                 </div>
               </div>
             );
