@@ -97,9 +97,9 @@ const HomeProducts = () => {
     setToggleModal(true);
   };
 
-  // close modal
   const onModalClose = () => {
     setToggleModal(false);
+    // close modal
   };
   return (
     <div className=" w-full ">

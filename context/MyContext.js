@@ -10,31 +10,28 @@ const MyContext = ({ children }) => {
   const [cardItem, setCardItem] = useState([]);
   const [favourite, setfavourite] = useState([]);
 
+  // homeAddTofavourite
 
-  // homeAddTofavourite 
-
-  const homeAddTofavourite =(curEle)=>{
-    console.log('addproduct',curEle)
-    toast.success('add to favourite',{
-      position:'top-center',
-      autoClose:1000
-    })
-    setfavourite([...favourite,curEle])
-
-  }
-  console.log(favourite)
+  const homeAddTofavourite = (curEle) => {
+    console.log("addproduct", curEle);
+    toast.success("add to favourite cart", {
+      position: "top-center",
+      autoClose: 1000,
+    });
+    setfavourite([...favourite, curEle]);
+  };
+  console.log(favourite);
 
   // homeAddToCart
 
-  const homeAddToCart =(curEle)=>{
-    console.log('homeaddto cart',curEle)
-    alert('add to cart',curEle)
-    setCardItem([...cardItem,curEle])
+  const homeAddToCart = (curEle) => {
+    console.log("homeaddto cart", curEle);
+    alert("add to cart", curEle);
+    setCardItem([...cardItem, curEle]);
+  };
+  console.log(cardItem);
 
-  }
-  console.log(cardItem)
-
-  // product component att to cart 
+  // product component att to cart
 
   const clickhandle = (curEle) => {
     toast.success("cart added", {
@@ -73,14 +70,40 @@ const MyContext = ({ children }) => {
 
   const addTofavourite = (curEle) => {
     console.log("favourite products", curEle);
-    toast.success("add to favourite ",{
-      position:'top-center',
-      autoClose:1000
-
+    toast.success("add to favourite ", {
+      position: "top-center",
+      autoClose: 1000,
     });
     setfavourite([...favourite, curEle]);
   };
   console.log(favourite);
+
+  // favouriteAddtoCart -----------
+
+  const favouriteAddtoCart = (curEle) => {
+    console.log("favouriteAddtoCart", curEle);
+    toast.success("add your favourite cart", {
+      position: "top-center",
+      autoClose: 1000,
+    });
+    setCardItem([...cardItem, curEle]);
+  };
+  console.log(cardItem);
+
+  // favouriteRemoveCart ----------
+  const favouriteRemoveCart = (ele) => {
+    console.log("umar", ele);
+    console.log("umarrrrrrrrr", favourite);
+    const removeCart = favourite.filter((item) => {
+      return ele.id !== item.id;
+    });
+    toast.error("remove cart successfully", {
+      position: "top-center",
+      autoClose: 1000,
+    });
+
+    setfavourite(removeCart);
+  };
 
   return (
     <UserContext.Provider
@@ -95,7 +118,9 @@ const MyContext = ({ children }) => {
         favourite,
         setfavourite,
         homeAddToCart,
-        homeAddTofavourite
+        homeAddTofavourite,
+        favouriteAddtoCart,
+        favouriteRemoveCart,
       }}
     >
       {children}

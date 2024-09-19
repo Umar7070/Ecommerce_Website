@@ -3,15 +3,16 @@
 import { UserContext } from "@/context/MyContext";
 import React, { useContext, useState } from "react";
 import Link from "next/link";
+import { RxCross2 } from "react-icons/rx";
 
 const Favourite = () => {
-  const { favourite } = useContext(UserContext);
+  const { favourite, favouriteAddtoCart,favouriteRemoveCart } = useContext(UserContext);
   return (
     <>
       {favourite.length === 0 ? (
         <div>
           <div className="flex justify-center text-2xl my-5 capitalize font-bold">
-            <h1>cart is empty</h1>
+            <h1 className="text-red-600">  favourite cart is empty</h1>
           </div>
           <div className="flex justify-center">
             <Link
@@ -31,7 +32,10 @@ const Favourite = () => {
           return (
             <div key={index}>
               <div className="">
-                <div className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="shadow-lg hover:shadow-xl transition-shadow duration-300 text-red-800 text-xl cursor-pointer hover:text-blue-700">
+                  <div className="flex justify-end mr-6 ">
+                    <RxCross2 className="my-5 "  onClick={()=>favouriteRemoveCart(curEle)} />
+                  </div>
                   <div className="flex justify-center items-center">
                     <img src={curEle.img} alt="" />
                   </div>
@@ -43,6 +47,12 @@ const Favourite = () => {
                     <p className="my-3 text-2xl text-blue-600">
                       {curEle.price}
                     </p>
+                    <button
+                      onClick={() => favouriteAddtoCart(curEle)}
+                      className="bg-blue-400 p-2 rounded-lg  text-xs shadow-full capitalize text-white"
+                    >
+                      add to cart
+                    </button>
                   </div>
                 </div>
               </div>
