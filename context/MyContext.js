@@ -26,7 +26,10 @@ const MyContext = ({ children }) => {
 
   const homeAddToCart = (curEle) => {
     console.log("homeaddto cart", curEle);
-    alert("add to cart", curEle);
+    toast.success("add to cart", curEle,{
+      position:'top-center',
+      autoClose:1000
+    });
     setCardItem([...cardItem, curEle]);
   };
   console.log(cardItem);
