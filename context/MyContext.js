@@ -9,7 +9,6 @@ export const UserContext = createContext();
 const MyContext = ({ children }) => {
   const [cardItem, setCardItem] = useState([]);
   const [favourite, setfavourite] = useState([]);
-  const[product,setProduct]=useState([])
 
   // homeAddTofavourite
 
@@ -25,17 +24,35 @@ const MyContext = ({ children }) => {
 
   // homeAddToCart
 
+  // const homeAddToCart = (curEle) => {
+  //   console.log("produts============>>>>", curEle);
+  //   toast.success("add to cart", curEle, {
+  //     position: "top-center",
+  //     autoClose: 1000,
+  //   });
+  //   setCardItem([...cardItem, { ...curEle, qty: 1 }]);
+  // };
+  // console.log(cardItem);
   const homeAddToCart = (curEle) => {
     console.log("produts============>>>>", curEle);
-    toast.success("add to cart", curEle,{
-      position:'top-center',
-      autoClose:1000
-    });
-    setCardItem([...cardItem, {...curEle, qty: 1}]);
+  
+    // Check if the item is already in the cart
+    const isAlreadyInCart = cardItem.some((item) => item.id === curEle.id);
+  
+    if (isAlreadyInCart) {
+      toast.error("Your cart is already added", {
+        position: "top-center",
+        autoClose: 1000,
+      });
+    } else {
+      toast.success("Added  to cart", {
+        position: "top-center",
+        autoClose: 1000,
+      });
+      setCardItem([...cardItem, { ...curEle, qty: 1 }]);
+    }
   };
-  console.log(cardItem);
-
-
+  
 
   // deleteItem delete card
   const deleteItem = (item) => {
@@ -50,13 +67,24 @@ const MyContext = ({ children }) => {
   };
 
   const incrementHandle = (curEle) => {
-    console.log('filterrrr',curEle)
-    const filterProduct = product.find((curEle,ind)=>{
-      return curEle.id===ind.id
+    let productCount = cardItem.map((item)=> {
+      return item.id === curEle.id ? {...item , qty: item.qty +=1} : item
     })
-    console.log(filterProduct)
-    }
-  
+    setCardItem(productCount)
+  };
+
+  // decrementHandle __________________
+
+  const decrementHandle =(curEle)=>{
+    console.log('decrementHandle???????????',curEle)
+    const decrementItem = cardItem.map((value)=>{
+      return value.id === curEle.id ? {...value , qty: value.qty-=1}:value
+    })
+    setCardItem(decrementItem)
+   
+  }
+
+
   // card modal add to car
 
   const CartModalAdd = (product) => {
@@ -120,6 +148,7 @@ const MyContext = ({ children }) => {
         homeAddTofavourite,
         favouriteAddtoCart,
         favouriteRemoveCart,
+        decrementHandle
       }}
     >
       {children}

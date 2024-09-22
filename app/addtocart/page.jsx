@@ -5,7 +5,7 @@ import { RxCross1 } from "react-icons/rx";
 import { UserContext } from "@/context/MyContext";
 
 const page = () => {
-  const { cardItem, setCardItem, deleteItem, incrementHandle } =
+  const { cardItem, deleteItem, incrementHandle,decrementHandle } =
     useContext(UserContext);
 
   console.log("cardItem===============!11111111111", cardItem);
@@ -15,7 +15,7 @@ const page = () => {
       {cardItem.length === 0 ? (
         <div>
           <div className="flex justify-center items-center flex-col my-10">
-            <h1 className="text-gray-800 uppercase font-bold text-3xl">
+            <h1 className=" uppercase font-bold text-3xl text-purple-700">
               cart is empty
             </h1>
             <Link href="/product">
@@ -31,7 +31,7 @@ const page = () => {
 
       {cardItem.map((curEle, index) => {
         return (
-          <>
+          <div key={index}>
             <div className="container flex gap-[40px] shadow-lg p-10 my-5">
               <div>
                 <img
@@ -59,7 +59,7 @@ const page = () => {
                     +
                   </p>
                   <span>{curEle?.qty}</span>
-                  <span className="text-blue-800 ">-</span>
+                  <p onClick={()=>decrementHandle(curEle)} className="text-blue-800 ">-</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-2xl text-blue-700 font-bold">
@@ -71,12 +71,12 @@ const page = () => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         );
       })}
-      <dvi className="uppercase font-bold flex justify-end mr-[100px] my-10  gap-[10px] text-2xl text-gray-600">
+      <div  className="uppercase font-bold flex justify-end mr-[100px] my-10  gap-[10px] text-2xl text-gray-600">
         sub Total: <span> $325</span>
-      </dvi>
+      </div>
     </div>
   );
 };

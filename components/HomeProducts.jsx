@@ -108,7 +108,7 @@ const HomeProducts = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-center  gap-6 p-5 shadow-lg mt-10">
           {producat.map((curEle, index) => {
             return (
-              <>
+              <div key={index}>
                 <div className="border rounded-lg hover:scale-110 transition-transform duration-500 relative group">
                   <img src={curEle.img} alt="" />
                   <div className="absolute top-5 right-3 flex-col gap-2 p-1 shadow-lg hidden group-hover:flex group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-5 opacity-0">
@@ -135,7 +135,7 @@ const HomeProducts = () => {
                     {curEle.price}
                   </p>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

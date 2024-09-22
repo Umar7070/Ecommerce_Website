@@ -52,14 +52,14 @@ const productDetail = [
   },
   {
     id: 7,
-    title: "Playstation 4 2TB Slim Gaming Console.",
+    title: "Playstation 4 2TB Slim Gaming for the Console.",
     name: "Gaming",
     price: "20$",
     img: "./img/tp7.jpg",
   },
   {
     id: 8,
-    title: "Playstation 4 2TB Slim Gaming Console.",
+    title: "Playstation 4 2TB Slim Gaming for the  Console.",
     name: "Mobile",
     price: "200$",
     img: "./img/tp8.jpg",
@@ -82,7 +82,7 @@ const productDetail = [
   },
   {
     id: 11,
-    title: "Playstation 4 2TB Slim Gaming Console.",
+    title: "Playstation 4 2TB Slim Gaming for the  Console.",
     name: "Gaming",
     price: "200$",
     img: "./img/p11.jpg",
