@@ -9,6 +9,7 @@ export const UserContext = createContext();
 const MyContext = ({ children }) => {
   const [cardItem, setCardItem] = useState([]);
   const [favourite, setfavourite] = useState([]);
+  const[product,setProduct]=useState([])
 
   // homeAddTofavourite
 
@@ -25,25 +26,16 @@ const MyContext = ({ children }) => {
   // homeAddToCart
 
   const homeAddToCart = (curEle) => {
-    console.log("homeaddto cart", curEle);
+    console.log("produts============>>>>", curEle);
     toast.success("add to cart", curEle,{
       position:'top-center',
       autoClose:1000
     });
-    setCardItem([...cardItem, curEle]);
+    setCardItem([...cardItem, {...curEle, qty: 1}]);
   };
   console.log(cardItem);
 
-  // product component att to cart
 
-  const clickhandle = (curEle) => {
-    toast.success("cart added", {
-      position: "top-center",
-      autoClose: 1000,
-    });
-    setCardItem([...cardItem, curEle]);
-  };
-  console.log(cardItem);
 
   // deleteItem delete card
   const deleteItem = (item) => {
@@ -58,8 +50,13 @@ const MyContext = ({ children }) => {
   };
 
   const incrementHandle = (curEle) => {
-    alert("click me", curEle);
-  };
+    console.log('filterrrr',curEle)
+    const filterProduct = product.find((curEle,ind)=>{
+      return curEle.id===ind.id
+    })
+    console.log(filterProduct)
+    }
+  
   // card modal add to car
 
   const CartModalAdd = (product) => {
@@ -111,7 +108,6 @@ const MyContext = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
-        clickhandle,
         cardItem,
         setCardItem,
         deleteItem,

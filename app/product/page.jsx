@@ -91,7 +91,7 @@ const productDetail = [
 
 const Product = () => {
 
-  const {clickhandle,curEle,addTofavourite} = useContext(UserContext)
+  const {homeAddToCart,curEle,addTofavourite} = useContext(UserContext)
 
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState(productDetail);
@@ -149,7 +149,7 @@ const Product = () => {
                   <div className="border rounded-lg hover:scale-110 transition-transform duration-500 relative group">
                     <img src={curEle.img} alt="" />
                     <div className="absolute top-5 right-3 flex-col gap-2 p-1 shadow-lg hidden group-hover:flex group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-5 opacity-0">
-                      <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" onClick={()=>clickhandle(curEle)}/>
+                      <BsCart className="text-[25px] py-1 hover:bg-blue-500 hover:text-white" onClick={()=>homeAddToCart(curEle)}/>
                       <FaRegEye
                         onClick={() => handleIconClick(curEle)}
                         className="text-[25px] py-1 hover:bg-blue-500 hover:text-white cursor-pointer"
