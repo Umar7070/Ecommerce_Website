@@ -30,6 +30,7 @@ const page = () => {
       )}
 
       {cardItem.map((curEle, index) => {
+        console.log(curEle)
         return (
           <div key={index}>
             <div className="container flex gap-[40px] shadow-lg p-10 my-5">
@@ -63,10 +64,10 @@ const page = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-2xl text-blue-700 font-bold">
-                    Price
+                    Price $
                   </span>
                   <p className="font-bold text-red-600 text-2xl">
-                    {curEle.price}
+                    {curEle?.price * curEle?.qty}
                   </p>
                 </div>
               </div>

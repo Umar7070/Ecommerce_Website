@@ -11,7 +11,7 @@ import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { UserContext } from "@/context/MyContext";
 
 export default function CardModal({ showModal, onModalClose,product }) {
-  const {CartModalAdd} = useContext(UserContext)
+  const {homeAddToCart} = useContext(UserContext)
 console.log("product========", product);
 
   const closeModal = () => {
@@ -55,7 +55,7 @@ console.log("product========", product);
                       </p>
                       <p className="mt-5 hover:text-blue-700 font-bold text-gray-900 text-2xl">{product?.price}</p>
                       <div>
-                        <button   onClick={()=>CartModalAdd(product)} className="bg-black text-white h-[40px] w-[150px] text-sm mt-10 rounded-md  capitalize"  >
+                        <button   onClick={()=>homeAddToCart(product)} className="bg-black text-white h-[40px] w-[150px] text-sm mt-10 rounded-md  capitalize"  >
                           add to cart
                         </button>
                       </div>
