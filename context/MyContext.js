@@ -9,6 +9,7 @@ export const UserContext = createContext();
 const MyContext = ({ children }) => {
   const [cardItem, setCardItem] = useState([]);
   const [favourite, setfavourite] = useState([]);
+  const [total,setTotal]=useState(0)
 
   // homeAddToCart
 
@@ -53,6 +54,9 @@ const MyContext = ({ children }) => {
   // decrementHandle __________________
 
   const decrementHandle = (curEle) => {
+    if (curEle.qty === 1) {
+      return;
+    }
     console.log("decrementHandle???????????", curEle);
     const decrementItem = cardItem.map((value) => {
       return value.id === curEle.id
@@ -70,9 +74,9 @@ const MyContext = ({ children }) => {
     const existsItem = favourite.some((ele) => ele.id === curEle.id);
 
     if (existsItem) {
-      toast.error("This item is already  favourites.",{
-        position:'top-center',
-        autoClose:1000
+      toast.error("This item is already  favourites.", {
+        position: "top-center",
+        autoClose: 1000,
       });
     } else {
       toast.success("Added to favourites", {
@@ -101,6 +105,14 @@ const MyContext = ({ children }) => {
     setfavourite(removeCart);
   };
 
+  const orderNow=()=>{
+    setCardItem([])
+    toast.success('Order Now successfully',{
+      position:'top-center',
+      autoClose:1000
+    })
+  }
+
   return (
     <UserContext.Provider
       value={{
@@ -114,6 +126,9 @@ const MyContext = ({ children }) => {
         homeAddToCart,
         favouriteRemoveCart,
         decrementHandle,
+        total,
+        setTotal,
+        orderNow
       }}
     >
       {children}

@@ -1,36 +1,38 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 import { RxCross1 } from "react-icons/rx";
 import { UserContext } from "@/context/MyContext";
 
-const page = () => {
-  const { cardItem, deleteItem, incrementHandle,decrementHandle } =
-    useContext(UserContext);
+const Page = () => {
+  const {
+    cardItem,
+    deleteItem,
+    total,
+    setTotal,
+    incrementHandle,
+    decrementHandle,
+    orderNow
+  } = useContext(UserContext);
 
-  console.log("cardItem===============!11111111111", cardItem);
+  // sub total 
+
+  const subTotal = cardItem.reduce(
+    (curEle, item) => curEle + item.price * item.qty,
+    0
+  );
+  setTotal(subTotal);
 
   return (
     <div>
       {cardItem.length === 0 ? (
-        <div>
-          <div className="flex justify-center items-center flex-col my-10">
-            <h1 className=" uppercase font-bold text-3xl text-purple-700">
-              cart is empty
-            </h1>
-            <Link href="/product">
-              <button className="my-6 bg-black  text-white w-[150px] h-[50px] rounded-lg uppercase">
-                shop now
-              </button>
-            </Link>
-          </div>
+        <div className="flex justify-center items-center my-5">
+         
+          <img src="/img/empty-cart.png" alt="" className="h-[200px]" />
         </div>
-      ) : (
-        ""
-      )}
+      ) : null}
 
       {cardItem.map((curEle, index) => {
-        console.log(curEle)
         return (
           <div key={index}>
             <div className="container flex gap-[40px] shadow-lg p-10 my-5">
@@ -38,7 +40,7 @@ const page = () => {
                 <img
                   src={curEle.img}
                   alt="card image"
-                  className=" p-3 border bg-gray-300"
+                  className="p-3 border bg-gray-300"
                 />
               </div>
               <div className="flex flex-col">
@@ -49,10 +51,10 @@ const page = () => {
                   <p className="text-lg text-gray-600 my-5">{curEle.title}</p>
                   <RxCross1
                     onClick={() => deleteItem(curEle)}
-                    className="text-2xl hover:text-blue-700 cursor-pointer  "
+                    className="text-2xl hover:text-blue-700 cursor-pointer"
                   />
                 </div>
-                <div className="my-3 text-4xl  font-bold cursor-pointer flex gap-3">
+                <div className="my-3 text-4xl font-bold cursor-pointer flex gap-3">
                   <p
                     onClick={() => incrementHandle(curEle)}
                     className="text-blue-800"
@@ -60,7 +62,12 @@ const page = () => {
                     +
                   </p>
                   <span>{curEle?.qty}</span>
-                  <p onClick={()=>decrementHandle(curEle)} className="text-blue-800 ">-</p>
+                  <p
+                    onClick={() => decrementHandle(curEle)}
+                    className="text-blue-800"
+                  >
+                    -
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-2xl text-blue-700 font-bold">
@@ -75,11 +82,21 @@ const page = () => {
           </div>
         );
       })}
-      <div  className="uppercase font-bold flex justify-end mr-[100px] my-10  gap-[10px] text-2xl text-gray-600">
-        sub Total: <span> $325</span>
-      </div>
+
+      {cardItem.length > 0 && (
+        <>
+          <div className="uppercase font-bold flex justify-end mr-[100px] my-3 gap-[10px] text-2xl text-gray-600">
+            Subtotal: <span>${total}</span>
+          </div>
+          <div className="flex justify-end mr-[100px]">
+            <button  onClick={orderNow} className="bg-orange-500 p-1 capitalize rounded-full px-4 text-white hover:bg-orange-400">
+              order now
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
 
-export default page;
+export default Page;
