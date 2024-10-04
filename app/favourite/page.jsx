@@ -39,7 +39,7 @@ const Favourite = () => {
       >
         {favourite.map((curEle, index) => {
           return (
-            <div key={index} className="p-4">
+            <div key={index} className="p-4 ">
               <div className="rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl text-red-800 cursor-pointer hover:text-blue-700">
                 <div className="flex justify-end mr-2 sm:mr-4 lg:mr-6">
                   <RxCross2
@@ -66,7 +66,7 @@ const Favourite = () => {
                   </p>
                   <button
                     onClick={() => homeAddToCart(curEle)}
-                    className="bg-blue-400 p-2 rounded-lg hover:bg-blue-500 font-bold text-xs sm:text-sm lg:text-base shadow-full capitalize text-white"
+                    className="bg-blue-400 p-2  rounded-lg hover:bg-blue-500 font-bold text-xs sm:text-sm lg:text-base shadow-full capitalize text-white"
                   >
                     Add to cart
                   </button>
