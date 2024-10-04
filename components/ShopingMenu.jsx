@@ -1,4 +1,5 @@
 import { CiDeliveryTruck } from "react-icons/ci";
+import { motion } from "framer-motion";
 import { FaDollarSign } from "react-icons/fa6";
 import { FiDivideCircle } from "react-icons/fi";
 import { FaHeadphones } from "react-icons/fa";
@@ -29,7 +30,12 @@ const list = [
 const ShopingMenu = () => {
   return (
     <>
-      <div className="container w-full my-[50px]">
+      <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 3 }}
+
+      className="container w-full my-[50px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center gap-3 place-items-center ">
           {list.map((curEle, index) => {
             return (
@@ -43,7 +49,7 @@ const ShopingMenu = () => {
             );
           })}
         </div>
-      </div>
+      </motion.div>
       <HomeProducts />
     </>
   );

@@ -4,6 +4,7 @@ import { UserContext } from "@/context/MyContext";
 import React, { useContext, useState } from "react";
 import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
+import { motion , easeIn } from "framer-motion";
 
 const Favourite = () => {
   const { favourite, homeAddToCart, favouriteRemoveCart } =
@@ -13,12 +14,12 @@ const Favourite = () => {
       {favourite.length === 0 ? (
         <div>
           <div className="flex justify-center text-2xl my-5 capitalize font-bold">
-            <h1 className="text-red-600"> favourite cart is empty</h1>
+            <h1 className="text-blue-600"> favourite cart is empty</h1>
           </div>
           <div className="flex justify-center">
             <Link
               href="/product"
-              className="bg-black text-white p-2 capitalize rounded-lg"
+              className="bg-black text-white p-2 px-4 capitalize rounded-lg"
             >
               add to favourite
             </Link>
@@ -28,7 +29,14 @@ const Favourite = () => {
         ""
       )}
 
-      <div className="container my-10 grid grid-cols-4 gap-10 ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+         transition: { delay: 2, duration: 1, ease: easeIn },
+
+        }}
+      className="container my-10 grid grid-cols-4 gap-10 ">
         {favourite.map((curEle, index) => {
 
           return (
@@ -66,7 +74,7 @@ const Favourite = () => {
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </>
   );
 };

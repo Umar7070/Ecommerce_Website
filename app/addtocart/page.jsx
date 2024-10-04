@@ -1,6 +1,6 @@
 "use client";
-import React, { useContext, useEffect } from "react";
-import Link from "next/link";
+import React, { useContext } from "react";
+import { motion,easeIn } from "framer-motion";
 import { RxCross1 } from "react-icons/rx";
 import { UserContext } from "@/context/MyContext";
 
@@ -12,10 +12,10 @@ const Page = () => {
     setTotal,
     incrementHandle,
     decrementHandle,
-    orderNow
+    orderNow,
   } = useContext(UserContext);
 
-  // sub total 
+  // sub total
 
   const subTotal = cardItem.reduce(
     (curEle, item) => curEle + item.price * item.qty,
@@ -25,16 +25,23 @@ const Page = () => {
 
   return (
     <div>
+      
       {cardItem.length === 0 ? (
         <div className="flex justify-center items-center my-5">
-         
           <img src="/img/empty-cart.png" alt="" className="h-[200px]" />
         </div>
       ) : null}
-
       {cardItem.map((curEle, index) => {
         return (
-          <div key={index}>
+          <motion.div
+          initial={{ opacity: 0 }}
+      animate=
+      {{
+        opacity: 1,
+        transition: { delay: 2, duration: 1, ease: easeIn },
+      }}
+          
+          key={index}>
             <div className="container flex gap-[40px] shadow-lg p-10 my-5">
               <div>
                 <img
@@ -79,17 +86,19 @@ const Page = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         );
       })}
-
       {cardItem.length > 0 && (
         <>
           <div className="uppercase font-bold flex justify-end mr-[100px] my-3 gap-[10px] text-2xl text-gray-600">
             Subtotal: <span>${total}</span>
           </div>
           <div className="flex justify-end mr-[100px]">
-            <button  onClick={orderNow} className="bg-orange-500 p-1 capitalize rounded-full px-4 text-white hover:bg-orange-400">
+            <button
+              onClick={orderNow}
+              className="bg-orange-500 p-1 capitalize rounded-full px-4 text-white hover:bg-orange-400"
+            >
               order now
             </button>
           </div>

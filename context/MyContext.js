@@ -1,6 +1,6 @@
 "use client";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from 'react-hot-toast';
 
 import React, { useState } from "react";
 import { createContext } from "react";
@@ -22,7 +22,7 @@ const MyContext = ({ children }) => {
         autoClose: 1000,
       });
     } else {
-      toast.success("Add to cart", {
+      toast.success("Added your cart", {
         position: "top-center",
         autoClose: 1000,
       });
@@ -132,7 +132,7 @@ const MyContext = ({ children }) => {
       }}
     >
       {children}
-      <ToastContainer />
+      <Toaster />
     </UserContext.Provider>
   );
 };
