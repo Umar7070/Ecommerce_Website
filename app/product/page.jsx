@@ -10,7 +10,6 @@ import { motion, easeIn } from "framer-motion";
 
 // Ab aap `motion` ko `easeIn` ke saath use kar sakte hain
 
-
 const Product = () => {
   const { homeAddToCart, addTofavourite } = useContext(UserContext);
   const [open, setOpen] = useState(false);
@@ -97,10 +96,11 @@ const Product = () => {
                       className="text-[25px] py-1 hover:bg-blue-500 hover:text-white"
                     />
                   </div>
-                  <p className="text-blue-950 mx-3 text-center font-bold text-lg md:text-2xl hover:text-blue-700">
+
+                  <em className="text-blue-950 font-bold text-2xl hover:text-blue-700 text-center">
                     {curEle.name}
-                  </p>
-                  <p className="text-sm text-center text-gray-500 p-2 font-bold">
+                  </em>
+                  <p className="text-sm text-gray-500  ml-2 py-2 font-bold ">
                     {curEle.title}
                   </p>
                   <p className="mx-3 text-center mb-6 hover:text-blue-700 font-bold text-xl">

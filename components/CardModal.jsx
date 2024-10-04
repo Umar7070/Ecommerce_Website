@@ -39,12 +39,12 @@ export default function CardModal({ showModal, onModalClose, product }) {
                     <p className="text-sm text-gray-700 hover:text-blue-700">
                       {product?.title}
                     </p>
-                    <p className="mt-5 text-gray-900 font-bold text-xl sm:text-2xl hover:text-blue-700">
+                    <p className="mt-5 text-gray-900 font-bold text-xl sm:text-2xl hover:text-blue-700">$
                       {product?.price}
                     </p>
                     <button
                       onClick={() => homeAddToCart(product)}
-                      className="bg-black text-white h-[40px] w-[150px] text-sm mt-5 sm:mt-10 rounded-md capitalize"
+                      className="bg-black text-white p-2 px-3 text-sm mt-5 sm:mt-10 rounded-md capitalize"
                     >
                       add to cart
                     </button>

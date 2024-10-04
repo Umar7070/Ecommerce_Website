@@ -126,9 +126,10 @@ const page = () => {
           <h1 className="text-2xl md:text-3xl font-bold text-blue-950 md:w-[300px] w-full leading-snug">
             The Best Note Book Collection 2024
           </h1>
+          
           <Link
             href="/product"
-            className="flex items-center gap-2 bg-blue-800  text-white hover:bg-blue-500 transition-all duration-300 rounded-lg text-lg h-[40px] w-[160px] justify-center"
+            className="flex items-center gap-2 bg-blue-800  text-white hover:bg-blue-500 transition-all duration-300 rounded-lg text-lg h-[40px] w-[140px] justify-center"
           >
             Shop Now
             <FaArrowRightLong />

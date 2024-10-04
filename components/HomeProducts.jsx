@@ -33,7 +33,7 @@ const HomeProducts = () => {
     }}
     
     className=" w-full ">
-      <div className="container w-full my-10">
+      <div className="container w-full ">
         <h2 className="text-2xl font-bold text-blue-950">Top Product</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-center  gap-6 p-5  mt-10">
           {ProductData.map((curEle, index) => {
