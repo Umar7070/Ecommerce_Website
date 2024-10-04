@@ -45,7 +45,7 @@ const Page = () => {
                 <img
                   src={curEle.img}
                   alt="card image"
-                  className="p-3 border bg-gray-300 w-full md:w-auto"
+                  className=" w-full md:w-auto"
                 />
               </div>
               <div className="flex flex-col">
