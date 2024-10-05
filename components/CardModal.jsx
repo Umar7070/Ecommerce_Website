@@ -30,9 +30,9 @@ export default function CardModal({ showModal, onModalClose, product }) {
                 </div>
                 <div className="w-full sm:w-[60%]">
                   <div className="my-4 ">
-                    <p className="text-blue-700 capitalize font-bold text-xl sm:text-2xl">
+                    <em className="text-blue-700 capitalize font-bold text-xl sm:text-2xl">
                       {product?.name}
-                    </p>
+                    </em>
                     <p className="text-md text-gray-700 py-3">
                       Galaxy Tab S6 Lite 10.4-inch Android Tablet 128GB.
                     </p>
@@ -53,8 +53,8 @@ export default function CardModal({ showModal, onModalClose, product }) {
               </div>
             </div>
           </DialogPanel>
-        </div>
       </div>
+        </div>
     </Dialog>
   );
 }
